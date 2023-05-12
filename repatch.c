@@ -1,5 +1,8 @@
 /*
-rePatch v3.0 reDux0 -- PATCHING WITH FREEDOM
+rePatch reLoaded v2.0 
+
+	SonicMastr is fixing this now
+	
 	Brought to you by SilicaTeam 2.0 --
 
 		Dev and "reV ur engines" by @dots_tb @CelesteBlue123 (especially his """holy grail"""  and self_auth info)
@@ -177,7 +180,7 @@ static char eboot_path[PATH_MAX];
 static int sceIoOpen_patched(const char *filename, int flag, SceIoMode mode) {
 	int ret = -1;
 
-	if ((flag & SCE_O_WRONLY) != SCE_O_WRONLY && sceSblACMgrIsSceShell(0) && (strncmp(filename, "ux0:", sizeof("ux0:") -1) == 0) && strstr(filename, "/eboot.bin") != NULL){
+	if ((flag & SCE_O_WRONLY) != SCE_O_WRONLY && sceSblACMgrIsSceShell(0) && ((strncmp(filename, "ux0:", sizeof("ux0:") -1) == 0) || (strncmp(filename, "gro0:", sizeof("gro0:") -1) == 0)) && strstr(filename, "/eboot.bin") != NULL){
 			stripDevice(filename, eboot_path);
 			resolveFolder(eboot_path);
 			if((ret = TAI_CONTINUE(int, ref_hooks[1], eboot_path, flag, mode))>0) {

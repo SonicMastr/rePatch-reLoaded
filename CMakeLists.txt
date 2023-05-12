@@ -21,7 +21,7 @@ add_link_options(
 
 include_directories(
   ${VDSUITE_KERNEL_INCLUDE_DIRECTORIES}
-  ${VDSUITE_STANDARD_INCLUDE_DIRECTORIES}
+  ${PSP2_SNC_STANDARD_INCLUDE_DIRECTORIES}
 )
 
 link_directories(
