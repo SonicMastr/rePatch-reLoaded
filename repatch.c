@@ -79,7 +79,7 @@ static int overlayHandler(uint32_t pid, mount_point_overlay *overlay_old, mount_
 	overlay_new->mountId = 0;
 	overlay_new->PID = pid;
 	overlay_new->order = 0x85;
-	overlay_new->type = 1;
+	overlay_new->type = 3;
 	if(opt & AIDS_PATH)
 		strncpy(overlay_new->dst, "addcont0:", sizeof(overlay_new->dst));
 	else
